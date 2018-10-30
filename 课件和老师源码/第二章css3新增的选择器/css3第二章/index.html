@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			/*p[xiandai]{
+				color: red;
+			}*/
+			/*p[xiandai="kafei"]{
+				color: red;
+			}*/
+			/*p[xiandai~="kafei"]{
+				color: red;
+			}*/
+			/*p[xiandai^="kafei"]{
+				color: blue;
+			}*/
+			/*p[xiandai^="kafei"]{
+				color: blue;
+			}*/
+			/*p[xiandai*=ch]{
+				color: red;
+			}*/
+			p[xiandai|=kafei]{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!--^$*|~-->
+		<p xiandai="kafei">1</p>
+		<p xiandai="kafei-lvcha">2</p>
+		<p xiandai="kafeinaicha">3</p>
+		<p xiandai="hongcha">4</p>
+		<p>5</p>
+		<script>
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.wrap{
+				width: 200px;
+				height: 30px;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				overflow: hidden;
+			}
+			.progress{
+				width: 400px;
+				height: 30px;
+				background: -webkit-repeating-linear-gradient(45deg,green 0,green 10px,#fff 10px,#fff 20px);
+				transition: 3s all;
+			}
+			.wrap:hover .progress{
+				background-position:-100px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="progress">
+				
+			</div>
+		</div>
+	</body>
+</html>

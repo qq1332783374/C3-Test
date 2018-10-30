@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>transform</title>
+		<style>
+			body{
+				border: 1px solid black;
+				height: 120px;
+			}
+			.wrap{
+				width: 100px;
+				/*height: 100px;*/
+				background: red;
+				
+				font-family: "微软雅黑";
+				font-size: 16px;
+				text-align: center;
+				line-height: 100px;
+				height: 100px;
+				margin: 0 auto;
+				transition: 1s all;
+				/*-webkit-transform: skew(30deg,45deg);*/
+				/*-webkit-transform: skewX(-30deg);*/
+				/*-webkit-transform: translateY(100px);*/
+				-webkit-transform: translate(100px,150px);
+			}
+			.wrap a{
+				display: block;
+				/*-webkit-transform: skewX(30deg);*/
+			}
+			body:hover .wrap{
+				/*-webkit-transform:rotate(360deg) scale(2);*/
+				/*-webkit-transform:;*/
+			}
+		</style>
+	</head>
+	<body style="margin: 200px;">
+		
+		<div class="wrap">
+			<a href="#">123zaa</a>
+		</div>
+		
+	</body>
+</html>

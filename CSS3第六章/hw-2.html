@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>下拉菜单</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			a{
+				text-decoration: none;
+				color: #666;
+			}
+			ul li{
+				list-style: none;
+			}
+			.nav {
+				width: 250px;
+				margin: 20px auto;
+			}
+			.nav ul:nth-child(1){
+				display: flex;
+			}
+			.nav ul:nth-child(1)>li{
+				width: 120px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+				border: 1px solid #ddd;
+				box-shadow: 2px 2px 4px #ddd;
+				transition:1s all;
+			}
+			.nav ul:nth-child(2){
+				height: 0;
+			}
+			.nav ul:nth-child(2)>li{
+				height: 0;
+				overflow: hidden;
+				transition:0.7s;
+			}
+			ul:nth-child(1)>li:hover a .creat{
+				border-top: 8px solid #ddd;
+				border-bottom: 0px solid #ddd;
+				border-left: 8px solid transparent;
+				border-right: 8px solid transparent;
+			}
+			ul:nth-child(1)>li:hover ul:nth-child(2)>li{
+				border: 1px solid #ddd;
+				height: 40px;
+			}
+			
+			.creat{
+				display: inline-block;
+				transition: 1s all;
+				width: 0;
+				height: 0;
+				border-top: 8px solid transparent;
+				border-bottom: 8px solid transparent;
+				border-left: 8px solid #ddd;
+				border-right: 0px solid;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<ul>
+				<li>
+					<a href="javascript:;">下拉菜单 <span class="creat"></span></a>
+					<ul>
+						<li><a href="javascript:;">1</a></li>
+						<li><a href="javascript:;">2</a></li>
+						<li><a href="javascript:;">3</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;">下拉菜单 <span class="creat"></span></a>
+					<ul>
+						<li><a href="javascript:;">1</a></li>
+						<li><a href="javascript:;">2</a></li>
+						<li><a href="javascript:;">3</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<script src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript">
+			
+		</script>
+	</body>
+</html>

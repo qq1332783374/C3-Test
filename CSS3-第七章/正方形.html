@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>立方体</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.wrap{
+				width: 100px;
+				height: 100px;
+				border: 2px solid #ddd;
+				box-shadow: 2px 2px 4px #ddd;
+				position: relative;
+				margin: 50px auto;
+				padding: 100px;
+				-webkit-perspective-origin:right top;
+				-webkit-perspective:800px;
+			}
+			.trangel{
+				width: 100px;
+				height: 100px;
+				background: red;
+				/* 建立3d舞台 */
+				-webkit-transform-style: preserve-3d;
+				transition: 5s all;
+			}
+			.trangel div{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				text-align: center;
+				line-height: 100px;
+				color: #fff;
+				background: black;
+			}
+			.trangel div:nth-of-type(1){
+				top: -100px;
+				left: 0px;
+				background: -webkit-linear-gradient(top, #1E9FFF,#A6E1EC);
+				-webkit-transform-origin: bottom;
+				-webkit-transform: rotateX(90deg);
+			}
+			.trangel div:nth-of-type(2){
+				top: 0px;
+				left: -100px;
+				background: -webkit-linear-gradient(left, #1E9FFF,#A6E1EC);
+				-webkit-transform-origin: right;
+				-webkit-transform: rotateY(-90deg);
+			}
+			.trangel div:nth-of-type(3){
+				top: 0px;
+				left: 0px;
+				background:-webkit-linear-gradient(360deg, #1E9FFF,#A6E1EC);
+			}
+			.trangel div:nth-of-type(4){
+				top: 100px;
+				left: 0px;
+				background: -webkit-linear-gradient(bottom, #1E9FFF,#A6E1EC);
+				-webkit-transform-origin: top;
+				-webkit-transform: rotateX(-90deg);
+			}
+			.trangel div:nth-of-type(5){
+				top: 0px;
+				left: 100px;
+				background: -webkit-linear-gradient(right, #1E9FFF,#A6E1EC);
+				-webkit-transform-origin: left;
+				-webkit-transform: rotateY(90deg);
+			}
+			.trangel div:nth-of-type(6){
+				left: 0px;
+				top: 0px;
+				background:-webkit-linear-gradient(-360deg, #1E9FFF,#A6E1EC);
+				-webkit-transform:translateZ(-100px) rotateX(180deg);
+			}
+			.wrap:hover .trangel{
+				-webkit-transform: rotateX(360deg) rotateY(-360deg) rotateZ(360deg);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div class="trangel">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>
+			</div>
+		</div>
+	</body>
+
+</html>

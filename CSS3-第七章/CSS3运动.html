@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>循环运动</title>
+		<style type="text/css">
+			@-webkit-keyframes domove{
+				0%{
+					left: 0px;
+					top: 0px;
+				}
+				25%{
+					left: 300px;
+					top: 0px;
+				}
+				50%{
+					left: 300px;
+					top: 300px;
+				}
+				75%{
+					left: 0;
+					top: 300px;
+				}
+				100%{
+					left: 0;
+					top: 0;
+				}
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.wrap{
+				width: 400px;
+				height: 400px;
+				margin: 20px auto;
+				position: relative;
+				border: 1px solid #ddd;
+				box-shadow: 2px 2px 4px #ddd;
+			}
+			.trangel{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background:-webkit-linear-gradient(30deg, #1E9FFF,#A6E1EC);
+				top: 0;
+				left: 0;
+				animation: 2s  infinite domove;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div class="trangel"></div>
+		</div>
+	</body>
+
+</html>

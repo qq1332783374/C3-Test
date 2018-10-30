@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>扇形导航</title>
+		<style>
+			*{
+				margin: 0;
+			}
+			.wrap{
+				position: fixed;
+				width: 50px;
+				height: 50px;
+				right: 20px;
+				bottom: 20px;
+			}
+			.wrap img{
+				position: absolute;
+				transition: 1s all;
+				left: 0;
+				top: 0;
+			}
+			.home{
+				width: 50px;
+				height: 50px;
+				background: url(img/home.png) no-repeat;
+				position: absolute;
+				left: 0;
+				top: 0;
+				transition: 1s all;
+				/*-webkit-transform: rotate(360deg);*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap" id="wrap">
+			<img src="img/clos.png" />
+			<img src="img/full.png" />
+			<img src="img/open.png" />
+			<img src="img/prev.png" />
+			<img src="img/refresh.png" />
+			
+			<div class="home" id="home">
+				
+			</div>
+			
+		</div>
+		<script>
+			var oHome = document.getElementById("home")
+			var oImg = document.getElementById("wrap").getElementsByTagName("img")
+			var onOff = true
+			var iR = -150
+			oHome.onclick = function(){
+				if(onOff){
+					this.style.webkitTransform = "rotate(360deg)"
+					for (var i=0;i<oImg.length;i++) {
+						var iLt = toChage(iR,90/4*i)
+//						console.log(iLt)
+						oImg[i].style.left = iLt.left+"px"
+						oImg[i].style.top = iLt.top+"px"
+						oImg[i].style.webkitTransform = "rotate(-720deg)"
+					}
+					
+					
+					onOff = false
+				}else {
+					this.style.webkitTransform = "rotate(0deg)"
+					for (var i=0;i<oImg.length;i++) {
+						
+						oImg[i].style.transition = "0.5s "+(oImg.length-1-i)*100+"ms"
+//						console.log(oImg[i].style.transition)
+						oImg[i].style.left = 0+"px"
+						oImg[i].style.top = 0+"px"
+						oImg[i].style.webkitTransform = "rotate(-720deg)"
+					}
+					
+					
+					
+					onOff = true
+				}
+			}
+			
+			function toChage(iR,iRotate){
+				var l = Math.round(Math.sin(iRotate/180*Math.PI)*iR)
+				var t = Math.round(Math.cos(iRotate/180*Math.PI)*iR)
+				return {
+					left:l,
+					top:t
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>

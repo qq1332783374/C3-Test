@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			*{
+				margin: 0;
+			}
+			.wrap{
+				width:100%;
+				height: 100px;
+				background: red;
+			}
+			.inner {
+				width: 25%;
+				/*height: 100px;*/
+				height: 1rem;
+				background: blue;
+			}
+			p{
+				color: #fff;
+				font-size: 0.12rem;
+				/*font-size: 12px;*/
+			}
+			/*
+			 * rem 根据根元素的(font-size)进行变化
+			 	em 根据父元素(font-size)进行变化
+			 	
+			 	1rem = 100px
+			 	0.12rem		12px 
+			 	
+			 * */
+			@media screen and (min-width:321px) {
+				html{
+					/*background: red;*/
+					font-size: 100px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="inner">
+				<p>1</p>
+			</div>
+		</div>
+		<script>
+			（function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 750) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+
+
+
+		</script>
+	</body>
+</html>

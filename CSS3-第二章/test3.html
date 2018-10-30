@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>利用input类型为radio实现选项卡</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			label{
+				float: left;
+				width: 50px;
+				position: relative;
+				margin-right: 5px;
+			}
+			label input{
+				position: absolute;
+				left: -500px;
+				top: -500px;
+			}
+			label span{
+				float: left;
+				width: 50px;
+				text-align: center;
+				height: 50px;
+				line-height: 50px;
+				border: 1px solid #ddd;
+				cursor: pointer;
+			}
+			label input:checked~span{
+				background: #1E9FFF;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<label>
+			<input type="radio" name="tabs" id="tabs" value="" />
+			<span>选项1</span>
+		</label>
+		<label>
+			<input type="radio" name="tabs" id="tabs" value="" />
+			<span>选项1</span>
+		</label>
+		<label>
+			<input type="radio" name="tabs" id="tabs" value="" />
+			<span>选项1</span>
+		</label>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			@-webkit-keyframes move{
+				0%{
+					-webkit-transform: rotateX(180deg);
+					opacity: 0;
+				}
+				20%{
+					-webkit-transform: rotateX(-20deg);
+					opacity: 1;
+				}
+				40%{
+					-webkit-transform: rotateX(16deg);
+					opacity: 1;
+				}
+				70%{
+					-webkit-transform: rotateX(-10deg);
+					opacity: 1;
+				}
+				100%{
+					-webkit-transform: rotateX(0deg);
+					opacity: 1;
+				}
+			}
+			
+			@-webkit-keyframes hide{
+				0%{
+					-webkit-transform: rotateX(0deg);
+					opacity: 1;
+				}
+				100%{
+					-webkit-transform: rotateX(-180deg);
+					opacity: 0;
+				}
+			}
+			
+			.wrap{
+				width: 600px;
+				height: 400px;
+				margin: 20px auto;
+			}
+			.wrap .imgs{
+				position: relative;
+				-webkit-transform-style: preserve-3d;
+				-webkit-perspective: 1000px;
+			}
+			.wrap img{
+				width: 600px;
+				height: 400px;
+				position: absolute;
+				-webkit-transform-origin: bottom;
+				-webkit-transform: rotateX(-180deg);
+				opacity: 0;
+				
+			}
+			.wrap .show{
+				-webkit-animation: 1s move;
+				-webkit-transform: rotateX(0deg);
+				opacity: 1;
+			}
+			.wrap .hide{
+				-webkit-transform: rotateX(-180deg);
+				opacity: 0;
+				-webkit-animation: 1s hide;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="imgs">
+				<img src="img/1.jpg" class="show" />
+				<img src="img/2.jpg" />
+				<img src="img/3.jpg" />
+				<img src="img/4.jpg" />
+			</div>
+		</div>
+		<div class="btns">
+			<button class="btn" id="prev">上一张</button>
+			<button class="btn" id="next">下一张</button>
+		</div>
+		<script>
+			var oNext = document.getElementById("next")
+			var oPrev = document.getElementById("prev")
+			var oImg = document.getElementsByTagName("img")
+			var num = 0
+			oNext.onclick = function(){
+				oImg[num].className = "hide"
+				num++
+				console.log(num,oImg.length)
+				if(num>=oImg.length){
+					num = 0
+				}
+				oImg[num].className = "show"
+			}
+			oPrev.onclick = function(){
+				oImg[num].className = "hide"
+				num--
+				console.log(num,oImg.length)
+				if(num<0){
+					num = oImg.length-1
+				}
+				oImg[num].className = "show"
+			}
+		</script>
+	</body>
+</html>

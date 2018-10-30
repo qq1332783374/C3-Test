@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>after和before生成小三角</title>
+		<style>
+			body{
+				/*background: #000000;*/
+			}
+			.tooltips{
+				width: 120px;
+				height: 40px;
+				background: #fbfbfb;
+				border: 1px solid #ddd;
+				border-radius: 5px;
+				position: relative;
+			}
+			.tooltips:before{
+				position:absolute;
+				width: 0;
+				height: 0;
+				border-bottom: 9px solid transparent;
+				border-left: 9px solid transparent;
+				border-top: 9px solid transparent;
+				border-right: 9px solid #d5d5d5;
+				left: -18px;
+				top: 10px;
+				content: "";
+			}
+			.tooltips:after{
+				position:absolute;
+				width: 0;
+				height: 0;
+				border-bottom: 9px solid transparent;
+				border-left: 9px solid transparent;
+				border-top: 9px solid transparent;
+				border-right: 9px solid #fbfbfb;
+				left: -17px;
+				top: 10px;
+				content: "";
+			}
+		</style>
+	</head>
+	<body style="margin: 200px;">
+		<div class="tooltips">
+			123
+		</div>
+	</body>
+</html>

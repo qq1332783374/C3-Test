@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>涟漪</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			@keyframes changes{
+				0%{
+					height: 0px;
+					width: 0px;
+					opacity: 1;
+				}
+				100%{
+					height: 100px;
+					width: 100px;
+					opacity: 0;
+				}
+			}
+			.wrap{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #ddd;
+				box-shadow: 2px 2px 4px #ddd;
+				margin: 20px auto;
+				position: relative;
+			}
+			.circle{
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: 10px;
+				height: 10px;
+				margin: auto;
+				border-radius: 50%;
+				background: #1E9FFF;
+				animation: changes 2s ease-in infinite;
+			}
+			.circle:nth-child(1){
+				animation-delay: 1s;
+			}
+			.circle:nth-child(2){
+				animation-delay: 1.5s;
+			}
+			.circle:nth-child(3){
+				animation-delay: 2s;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap"> 
+			<div class="circle">
+				
+			</div>
+			<div class="circle">
+				
+			</div>
+			<div class="circle">
+				
+			</div>
+			<div class="circle">
+				
+			</div>
+		</div>
+	</body>
+</html>

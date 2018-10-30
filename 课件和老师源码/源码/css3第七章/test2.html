@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.wrap{
+				width: 100px;
+				height: 100px;
+				padding: 100px;
+				border: 1px solid black;
+				margin: 50px auto;
+				position: relative;
+				-webkit-perspective-origin:right top;
+				-webkit-perspective:600px;
+				
+			}
+			.trangel{
+				width: 100px;
+				height: 100px;
+				position: relative;
+				background: red;
+				-webkit-transform-style: preserve-3d;
+				
+				transition: 1s all;
+				
+			}
+			.trangel div{
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background: black;
+				color: #fff;
+				line-height: 100px;
+				text-align: center;
+				
+			}
+			.trangel div:nth-of-type(1){
+				left: 0;
+				top:-100px;
+				background: burlywood;
+				-webkit-transform-origin:bottom;
+				-webkit-transform: rotateX(90deg);
+				
+			}
+			.trangel div:nth-of-type(2){
+				left: -100px;
+				top: 0;
+				background: cornflowerblue;
+				-webkit-transform-origin: right;
+				-webkit-transform: rotateY(-90deg);
+			}
+			.trangel div:nth-of-type(3){
+				left: 0px;
+				top: 0;
+				
+			}
+			.trangel div:nth-of-type(4){
+				left: 0px;
+				top: 100px;
+				background: darkorange;
+				-webkit-transform-origin: top;
+				-webkit-transform: rotateX(-90deg);
+			}
+			.trangel div:nth-of-type(5){
+				left: 100px;
+				top: 0px;
+				background:darkslateblue;
+				-webkit-transform-origin:left;
+				-webkit-transform: rotateY(90deg);
+			}
+			.trangel div:nth-of-type(6){
+				left: 0px;
+				top: 0px;
+				background:red;
+				-webkit-transform:translateZ(-100px) rotateX(180deg);
+			}
+			.wrap:hover .trangel{
+				-webkit-transform: rotateX(180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="trangel">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>
+			</div>
+			
+		</div>
+	</body>
+</html>

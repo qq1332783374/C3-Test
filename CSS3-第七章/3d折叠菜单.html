@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>3D折叠菜单</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			@-webkit-keyframes open{
+				0%{
+					-webkit-transform: rotateX(-120deg);
+				}
+				25%{
+					-webkit-transform: rotateX(30deg);
+				}
+				50%{
+					-webkit-transform: rotateX(-15deg);
+				}
+				75%{
+					-webkit-transform: rotateX(8deg);
+				}
+				100%{
+					-webkit-transform: rotateX(0deg);
+				}
+			}
+			@-webkit-keyframes close{
+				0%{
+					-webkit-transform: rotateX(0deg);
+				}
+				
+				100%{
+					-webkit-transform: rotateX(-120deg);
+				}
+			}
+			#wrap{
+				width: 150px;
+				margin: 30px auto;
+				position: relative;
+				-webkit-perspective: 800px;
+			}
+			#wrap h2{
+				height: 40px;
+				background: -webkit-linear-gradient(top,#1E9FFF,#A6E1EC);
+				color: #fff;
+				text-align: center;
+				position: relative;
+				z-index: 10;
+			}
+			#wrap div{
+				position: absolute;
+				width: 100%;
+				top: 32px;
+				left: 0;
+				-webkit-transform-style: preserve-3d;
+				-webkit-transform-origin:top;
+				-webkit-transform: rotateX(-120deg);
+				z-index: 1;
+				
+			}
+			#wrap span{
+				display: block;
+				height: 30px;
+				background: -webkit-linear-gradient(top,#1E9FFF,#A6E1EC);
+				color: #fff;
+				box-shadow: 2px 2px 4px #ddd;
+				transition: 1s ;
+			}
+			#wrap>div{
+				top: 40px;
+			}
+			#wrap .show{
+				-webkit-animation: 1.2s open;
+				-webkit-transform: rotateX(0deg);
+			}
+			#wrap .hide{
+				-webkit-animation: 1s close;
+				-webkit-transform: rotateX(-120deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<h2>我是标题</h2>
+			<div>
+				<span>选项1</span>
+				<div>
+					<span>选项2</span>
+					<div>
+						<span>选项3</span>
+						<div>
+							<span>选项4</span>
+							<div>
+								<span>选项5</span>
+								<div>
+									<span>选项6</span>
+									<div>
+										<span>选项7</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var oWrap = document.getElementById("wrap");
+			var oDiv = oWrap.getElementsByTagName('div');
+			var onOff = true;
+			var oTimer = null;
+			var i = 0;
+			oWrap.onclick = function(){
+				if(oTimer){
+					return
+				}
+				if(onOff){
+					i = 0
+					oTimer = setInterval(function(){
+						oDiv[i].className = "show";
+						i++;
+						if(i==oDiv.length){
+							clearInterval(oTimer);
+							oTimer = null;
+							onOff = false;
+						}
+					},200);
+				}else {
+					i = oDiv.length-1;
+					oTimer = setInterval(function(){
+						oDiv[i].className = "hide";
+						i--;
+						if(i<0){
+							clearInterval(oTimer);
+							oTimer = null;
+							onOff = true;
+						}
+					},200);
+				};
+			}
+		</script>
+	</body>
+</html>

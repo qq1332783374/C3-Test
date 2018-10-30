@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>radio实现选项卡切换</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			label{
+				float: left;
+				width: 50px;
+				position: relative;
+				margin-right: 5px;
+			}
+			label input{
+				position: absolute;
+				left: -500px;
+				top: -500px;
+			}
+			label span{
+				float: left;
+				width: 50px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+				border: 1px solid #000000;
+				cursor: pointer;
+				/*background: red;*/
+			}
+			label p{
+				display: none;
+				position: absolute;
+				width: 120px;
+				border:1px solid #000000;
+				top: 43px;
+				word-break: break-all;
+			}
+			label input:checked~span{
+				background: red;
+			}
+			label input:checked~p{
+				display: block;
+			}
+			label:nth-child(2) p{
+				left: -55px;
+			}
+			label:nth-child(3) p{
+				left: -110px;
+			}
+		</style>
+	</head>
+	<body>
+		<label>
+			<input type="radio" name="tab" checked="checked" />
+			<span>选项1</span>
+			<p>选项1选项1选项1选项1选项1选项1选项1选项1选项1选项1选项1选项1选项1选项1选项1aaaaaaaaaaaaaaaa</p>
+		</label>
+		<label>
+			<input type="radio" name="tab"/>
+			<span>选项1</span>
+			<p>选项2</p>
+		</label>
+		<label>
+			<input type="radio" name="tab"/>
+			<span>选项1</span>
+			<p>选项3</p>
+		</label>
+	</body>
+</html>

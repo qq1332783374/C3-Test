@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>after和before</title>
+		<style>
+			.header{
+				width: 200px;
+				border: 1px solid #000000;
+			}
+			.left{
+				float: left;
+			}
+			.right{
+				float: right;
+			}
+			.clear{
+				clear: both;
+			}
+			.header:after{
+				clear: both;
+				content: "";
+				display: block;
+				width: 0;
+				height: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<div class="left">
+				1
+				
+			</div>
+			<div class="right">
+				2
+			</div>
+			
+		</div>
+	</body>
+</html>

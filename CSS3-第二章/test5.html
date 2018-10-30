@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>三角形跟矩形组合成提示框</title>
+		<style type="text/css">
+			*{
+				margin: 100px;
+				padding: 0;
+			}
+			#demo{
+				width: 100px;
+				height: 100px;
+				background-color: #fff;
+				position: relative;
+				border: 4px solid #000;
+			}
+			#demo:after,#demo:before{
+				border: solid transparent; 
+				content: ' '; 
+				height: 0; 
+				left: 100%; 
+				position: absolute; 
+				width: 0;
+			}
+			#demo:after {
+				border-width: 14px;
+				border-left-color: #fff;
+				top: 15px;
+			}
+			
+			#demo:before {
+			  	border-width: 18px;
+			  	border-left-color: #000;
+			  	top: 11px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="demo">
+			
+		</div>
+	</body>
+</html>

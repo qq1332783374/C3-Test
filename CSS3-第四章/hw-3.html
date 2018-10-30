@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>三栏布局</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.warp div{
+				text-align: center;
+			}
+			.header{
+				height: 40px;
+				background: #D9534F;
+				line-height: 40px;
+				-webkit-column-count: 1;
+			}
+			.context{
+				display: -webkit-box;
+			}
+			.aside1{
+				height: 100px;
+				background: #1E9FFF;
+				-webkit-box-flex: 1;
+			}
+			.content{
+				height: 100px;
+				background: #FF6428;
+				-webkit-box-flex: 1;
+			}
+			.aside2{
+				height: 100px;
+				background: #A6E1EC;
+				-webkit-box-flex: 1;
+			}
+			.footer{
+				height: 40px;
+				background: #D9534F;
+				line-height: 40px;
+				-webkit-column-count: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="warp">
+			<div class="header">
+				header
+			</div>
+			<div class="context">
+				<div class="aside1">
+					aside1
+				</div>
+				<div class="content">
+					content
+				</div>
+				<div class="aside2">
+					aside2
+				</div>
+			</div>
+			<div class="footer">
+				footer
+			</div>
+		</div>
+	</body>
+</html>

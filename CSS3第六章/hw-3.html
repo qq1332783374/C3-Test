@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>遮盖层</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.content{
+				width: 520px;
+				height: 520px;
+				border: 1px solid #ddd;
+				box-shadow: 2px 2px 4px #ddd;
+				margin: 20px auto;
+				display: flex;
+				box-sizing: border-box;
+				padding: 10px;
+			}
+			.item{
+				width: 200px;
+				height: 150px;
+				border: 1px solid #666;
+				position: relative;
+				overflow: hidden;
+				transition: 2s all;
+			}
+			.over{
+				width: 200px;
+				height: 150px;
+				background: rgba(0,0,0,0.5);
+				position: absolute;
+				top: 150px;
+				transition: 1s all;
+				color: #fff;
+				text-align: center;
+			}
+			.item:hover .over{
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<div class="item">
+				<h2>内容</h2>
+				<div class="over">
+					遮盖层
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
